@@ -1,7 +1,0 @@
-
-
-
-  class Rect(x,y){
-
-
-  }

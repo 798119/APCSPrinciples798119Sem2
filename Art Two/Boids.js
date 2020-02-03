@@ -2,7 +2,7 @@
 
 class Boid{
   constructor(x, y, dx, dy){
-    this.w=200;
+    this.w=50;
     this.clr = color(random(0), (100), random(255))
     this.loc = createVector(x, y);
     this.vel = createVector(dx, dy);
