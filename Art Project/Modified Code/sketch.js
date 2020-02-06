@@ -1,7 +1,7 @@
 
 
-var particlesQuantity = 5000;
-
+var particlesQuantity = 3000;
+var planet = [];
 var positionX = new Array(particlesQuantity);
 var positionY = new Array(particlesQuantity);
 var velocityX = new Array(particlesQuantity).fill(0);
@@ -11,7 +11,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 100);
   stroke(0, 100, 50);
-
+  loadPlanet(4);
   for (var particle = 1; particle < particlesQuantity; particle++) {
     positionX[particle] = random(0, width);
     positionY[particle] = random(0, height);
@@ -23,6 +23,8 @@ function setup() {
 
 function draw() {
   background(0);
+  runPlanet();
+
 
   velocityX[0] = velocityX[0] * 0.5 + (mouseX - positionX[0]) * 0.1;
   velocityY[0] = velocityY[0] * 0.5 + (mouseY - positionY[0]) * 0.1;
@@ -42,6 +44,12 @@ function draw() {
     var hu = map(abs(velocityX[particle])+abs(velocityY[particle]), 0, 50, 75, 0);
     stroke(hu, 100, 100);
 
+    for(var i = 0; i < planet.length; i++){
+      if(positionX[particle]<planet[i].loc.x+50&&positionX[particle]>planet[i].loc.x-50&&positionY[particle]<planet[i].loc.y+50&&positionY[particle]>planet[i].loc.y-50){
+        stroke(0,0,0);
+    }
+  }
+
     if ((positionX[particle] < 0 && velocityX[particle] < 0) || (positionX[particle] > width && velocityX[particle] > 0)) {
       positionX[particle] = random(0, width);
       positionY[particle] = random(0, height);
@@ -58,6 +66,20 @@ function draw() {
   }
 }
 
+
+function loadPlanet(n){
+for(var i = 0; i < n ; i++){
+  planet[i] = new Planet(random(width/2), random(height/2), random (-4,4), random(-4,4), 0, 0, 0);
+// for loop to load balls
+}
+}
+
+function runPlanet(){
+for(var i =0;i < planet.length; i++){
+  planet[i].run();
+//for loop to run balls
+}
+}
 function mousePressed() {
   for (var particle = 1; particle < particlesQuantity; particle++) {
     positionX[particle] = random(0, width);
