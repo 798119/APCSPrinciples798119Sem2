@@ -1,6 +1,6 @@
 
 
-var particlesQuantity = 3000;
+var particlesQuantity = 4000;
 var planet = [];
 var positionX = new Array(particlesQuantity);
 var positionY = new Array(particlesQuantity);
@@ -69,7 +69,7 @@ function draw() {
 
 function loadPlanet(n){
 for(var i = 0; i < n ; i++){
-  planet[i] = new Planet(random(width/2), random(height/2), random (-4,4), random(-4,4), 0, 0, 0);
+  planet[i] = new Planet(random(width), random(height), random (-4,4), random(-4,4), 0, 0, 0);
 // for loop to load balls
 }
 }
@@ -87,4 +87,5 @@ function mousePressed() {
     velocityX[particle] = random(-10, 10);
     velocityY[particle] = random(-10, 10);
   }
+  
 }

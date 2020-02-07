@@ -40,7 +40,7 @@ update(){
   }
 
 render(){
-  // stroke(0,0,0); determines if color or not
+   // stroke(0,0,0); //determines if color or not
   fill(this.clr);
   ellipse (this.loc.x, this.loc.y, 100, 100);
   }
