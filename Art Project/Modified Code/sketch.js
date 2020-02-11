@@ -1,6 +1,6 @@
 
 
-var particlesQuantity = 4000;
+var particlesQuantity = 2000;
 var planet = [];
 var positionX = new Array(particlesQuantity);
 var positionY = new Array(particlesQuantity);
@@ -87,5 +87,5 @@ function mousePressed() {
     velocityX[particle] = random(-10, 10);
     velocityY[particle] = random(-10, 10);
   }
-  
+
 }
