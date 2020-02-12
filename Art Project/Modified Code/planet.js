@@ -15,6 +15,7 @@ run(){
   this.checkedges();
   this.update();
   this.render();
+
 }
 
 checkedges(){
@@ -42,6 +43,6 @@ update(){
 render(){
    // stroke(0,0,0); //determines if color or not
   fill(this.clr);
-  ellipse (this.loc.x, this.loc.y, 100, 100);
+  ellipse (this.loc.x, this.loc.y, 120, 100);
   }
 }//  +++++++++++++++++++++++++++++++++++  End Ball Class
