@@ -1,6 +1,6 @@
 
 
-var particlesQuantity = 2000;
+var particlesQuantity = 5000;
 var planet = [];
 var positionX = new Array(particlesQuantity);
 var positionY = new Array(particlesQuantity);
