@@ -4,7 +4,9 @@
 //orbiter claas
 
 
-class orbiter{
-  constructor(x, y){
-
+class Orbiter {
+  constructor(x, y, speedX, speedY){
+  this.loc= createVector(x,y);
+  this.vel= createVector(speedX, speedY);
+}
 }
