@@ -5,8 +5,8 @@
 
 
 class Orbiter {
-  constructor(x, y, speedX, speedY){
-  this.loc= createVector(x,y);
-  this.vel= createVector(speedX, speedY);
+  constructor(clr,r){
+    this.r=rad;
+    this.clr=clr;
 }
 }
