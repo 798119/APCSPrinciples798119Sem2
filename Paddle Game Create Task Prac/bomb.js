@@ -1,4 +1,5 @@
 //bomb class
+var gameState=3;
 
 class Bomb{
   constructor(x,y,dx,dy){
@@ -50,7 +51,7 @@ checkhitbox(){
   if(this.loc.x > paddle.loc.x&& this.loc.x < paddle.loc.x+200
   && this.loc.y > paddle.loc.y&& this.loc.y < paddle.loc.y+30){
     this.vel.y= -this.vel.y;
-  gamestate = 3;
+  endGame();
   //score counter
   }
 }
