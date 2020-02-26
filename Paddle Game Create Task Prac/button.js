@@ -31,3 +31,4 @@ class Button{
     rect(this.loc.x,this.loc.y,this.w,this.h);
 //run the buttons
   }
+}

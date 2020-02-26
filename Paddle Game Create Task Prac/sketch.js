@@ -2,8 +2,9 @@
 // 	8/15/19
 //  This is correct
 
-var Balls=[]
+var balls=[];
 var bigballs;
+var bombs =[];
 // var gameStart;
 var paddle;
 var gameState = 3;
@@ -17,6 +18,7 @@ function setup() {
 background(30,30,30);
 loadBalls(1);
 loadPaddle();
+loadBombs(1);
 //creating paddle and ball
 }
 
@@ -32,6 +34,7 @@ endGame();
   background(255,250,250,207);
   runBalls();
   runPaddle();
+  runBombs();
   //creating paddle
 
 }
@@ -70,6 +73,7 @@ function startGame(){
       mode = "Medium";
       gameState = 2;
       loadBalls(2);
+      loadBombs(1);
       //medium mode
     }
   if(mouseIsPressed &&
@@ -77,7 +81,8 @@ function startGame(){
     mouseY>600 && mouseY<640){
       mode = "Challenge";
       gameState = 2;
-      loadBalls(3)
+      loadBalls(3);
+      loadBombs(2);
     }
 //hard mode
 }
@@ -90,7 +95,9 @@ function playGame(){
   text("lives = " + lives,20,20);
   text("score = " + score,200,20);
   runBalls();
+  runBombs();
   runPaddle();
+
   endCheckGame();
 }
 //end game scren
@@ -136,17 +143,32 @@ function endCheckGame(){
 
 function loadBalls(n){
   for(var i = 0; i < n ; i++){
-    Balls[i] = new Ball(random(width),0, random(-.8,.8), random(-8,8));
+    balls[i] = new Ball(random(width),0, random(-.8,.8), random(-8,8));
 // for loop to load balls
   }
 }
 
 function runBalls(){
-  for(var i =0;i < Balls.length; i++){
-    Balls[i].run();
+  for(var i =0;i < balls.length; i++){
+    balls[i].run();
 //for loop to run balls
   }
 }
+
+function loadBombs(n){
+  for(var i = 0; i < n ; i++){
+    bombs[i] = new Bomb(random(width),0, random(-.8,.8), random(-8,8));
+// for loop to load balls
+  }
+}
+
+function runBombs(){
+  for(var i =0;i < bombs.length; i++){
+    bombs[i].run();
+//for loop to run balls
+  }
+}
+
 
 function loadPaddle(){
   paddle=new Paddle(500,500, 200,30);
