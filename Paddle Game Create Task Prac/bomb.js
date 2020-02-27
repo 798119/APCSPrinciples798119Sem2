@@ -5,8 +5,8 @@ class Bomb{
   constructor(x,y,dx,dy){
     this.loc=createVector(x,y);
     this.vel=createVector(dx, dy);
-    this.acc=createVector(.01,.03);
-    this.dx=random(-.1,-1);
+    this.acc=createVector(.005,.005);
+    this.dx=random(-.8,.8);
 //creating bomb
 
     this.clr = color(255, 0, 0);
@@ -30,7 +30,7 @@ checkedges(){
     }
     if(this.loc.y > height){
     this.vel.y = -1.01*this.vel.y;
-    lives--;
+    // lives--;
 //lives counter
     }
   }
@@ -38,7 +38,7 @@ checkedges(){
 update(){
 this.vel.add(this.acc);
 this.loc.add(this.vel);
-this.vel.limit(60);
+this.vel.limit(8);
 }
 render(){
     //this.clr = color(random(255), random(255),random(255))
@@ -51,7 +51,7 @@ checkhitbox(){
   if(this.loc.x > paddle.loc.x&& this.loc.x < paddle.loc.x+200
   && this.loc.y > paddle.loc.y&& this.loc.y < paddle.loc.y+30){
     this.vel.y= -this.vel.y;
-  endGame();
+    lives--;
   //score counter
   }
 }
