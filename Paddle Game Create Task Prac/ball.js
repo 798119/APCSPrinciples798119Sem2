@@ -4,12 +4,13 @@ class Ball{
   constructor(x,y,dx,dy){
     this.loc=createVector(x,y);
     this.vel=createVector(dx, dy);
-    this.acc=createVector(.01,.01);
-    this.dx=random (-1,1);
-//creating ball
+    this.acc=createVector(0,0);
+    this.clr = color(random(255), random(255),random(255))
+//ball class has no acceleration to prevent ball sticking to the right
 
-      this.clr = color(random(255), random(255),random(255))
+
   }
+
 run(){
   this.checkedges();
   this.update();
@@ -28,7 +29,7 @@ checkedges(){
     this.vel.y = -this.vel.y;
     }
     if(this.loc.y > height){
-    this.vel.y = -1.01*this.vel.y;
+    this.vel.y = -this.vel.y;
     lives--;
 //lives counter
     }
@@ -36,8 +37,9 @@ checkedges(){
 
 update(){
 this.vel.add(this.acc);
-this.loc.add(this.vel);
 this.vel.limit(5);
+this.loc.add(this.vel);
+
 }
 render(){
     //this.clr = color(random(255), random(255),random(255))

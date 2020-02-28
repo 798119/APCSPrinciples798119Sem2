@@ -134,7 +134,7 @@ function endGame(){
 //concusion?
 }
 function endCheckGame(){
-  if(lives===0){
+  if(lives<=0){
     gameState=3;
 
   }
@@ -143,7 +143,7 @@ function endCheckGame(){
 
 function loadBalls(n){
   for(var i = 0; i < n ; i++){
-    balls[i] = new Ball(random(width),0, random(-1,1), random(-5,5));
+    balls[i] = new Ball(random(width),0, random(-1,1), random(1,5));
 // for loop to load balls
   }
 }
@@ -157,7 +157,7 @@ function runBalls(){
 
 function loadBombs(n){
   for(var i = 0; i < n ; i++){
-    bombs[i] = new Bomb(random(width), 0 , random(-.8,.8), random(-8,8));
+    bombs[i] = new Bomb(random(width), 0 , random(-.8,.8), random(3,4));
 // for loop to load balls
   }
 }

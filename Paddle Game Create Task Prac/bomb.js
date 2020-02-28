@@ -5,11 +5,8 @@ class Bomb{
   constructor(x,y,dx,dy){
     this.loc=createVector(x,y);
     this.vel=createVector(dx, dy);
-    this.acc=createVector(.005,.005);
-    this.dx=random(-.8,.8);
-//creating bomb
-
     this.clr = color(255, 0, 0);
+    //same logic as ball
   }
 run(){
   this.checkedges();
@@ -43,7 +40,7 @@ this.vel.limit(8);
 render(){
     //this.clr = color(random(255), random(255),random(255))
 fill(this.clr);
-ellipse(this.loc.x, this.loc.y, 60,60);
+ellipse(this.loc.x, this.loc.y, 20,60);
 //ellipse(this.x, this.y, 50,50)
 }
 
