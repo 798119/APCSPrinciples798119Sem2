@@ -43,8 +43,21 @@ function startGame(){
   background(255,250,250);
   //title
   textSize(60);
-  fill(250);
+  fill(0);
   text("PaddleGame",250,200);
+  background(255,250,250);
+  textSize(20);
+  fill(252,0,42);
+  text("Directions: The two objects are a small ball and a slim bomb", 20,100);
+  text( "If you hit the ball with the paddle, you gain a point" ,20,125);
+  text("If you hit the bomb with the paddle, you lose a life", 20,150);
+  text("The goal is the get as many points as possible without losing 10 lives", 20,175);
+  text("Eazy Mode: 1 Ball and 1 Bomb" ,20,250);
+  text("Medium Mode: 3 Balls and 1 Bomb" ,20,300);
+  text("Hard Mode: 3 Balls and 2 Bombs", 20,350);
+
+
+
   //dificulty setting
   textSize(24);
   fill(0,60,250);
@@ -72,7 +85,7 @@ function startGame(){
     mouseY>600 && mouseY<640){
       mode = "Medium";
       gameState = 2;
-      loadBalls(2);
+      loadBalls(3);
       loadBombs(1);
       //medium mode
     }
@@ -116,7 +129,7 @@ function endGame(){
   fill(255,0,0);
   rect(440,600,95,50);
   fill(255);
-  text("Quit",450,635);
+  text("Quit",460,635);
 
   if(mouseIsPressed &&
     mouseX>190 && mouseX<380 &&
