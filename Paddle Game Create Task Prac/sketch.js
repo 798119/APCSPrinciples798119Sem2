@@ -8,7 +8,7 @@ var bombs =[];
 // var gameStart;
 var paddle;
 var gameState = 3;
-var mode = "Eazy";
+var mode = "Easy";
 var lives = 10;
 var score = 0;
 //variables within code
@@ -31,7 +31,7 @@ playGame();
 }else if(gameState===3){
 endGame();
 }
-  background(255,250,250,207);
+
   runBalls();
   runPaddle();
   runBombs();
@@ -43,7 +43,6 @@ function startGame(){
   background(255,250,250);
   //title
   textSize(60);
-  fill(0);
   text("PaddleGame",250,200);
   background(255,250,250);
   textSize(20);
@@ -54,7 +53,7 @@ function startGame(){
   text("The goal is the get as many points as possible without losing 10 lives", 20,175);
   text("Eazy Mode: 1 Ball and 1 Bomb" ,20,250);
   text("Medium Mode: 3 Balls and 1 Bomb" ,20,300);
-  text("Hard Mode: 3 Balls and 2 Bombs", 20,350);
+  text("Challenge Mode: 3 Balls and 2 Bombs", 20,350);
 
 
 
@@ -63,7 +62,7 @@ function startGame(){
   fill(0,60,250);
   rect(200,600,80,40);
   fill(255);
-  text("Eazy",215,625);
+  text("Easy",215,625);
   fill(250,0,250);
   rect(350,600,120,40);
   fill(255);
@@ -76,7 +75,7 @@ function startGame(){
   if(mouseIsPressed &&
     mouseX>200 && mouseX<280 &&
     mouseY>600 && mouseY<640){
-      mode = "Eazy";
+      mode = "Easy";
       gameState = 2;
 
     }

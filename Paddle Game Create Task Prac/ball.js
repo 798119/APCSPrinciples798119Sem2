@@ -32,6 +32,7 @@ checkedges(){
     this.vel.y = -this.vel.y;
     lives--;
 //lives counter
+
     }
   }
 
