@@ -15,7 +15,7 @@ var score = 0;
 function setup() {
   var cnv = createCanvas(800, 800);
   cnv.position((windowWidth-width)/2, 30);
-background(30,30,30);
+background(200,150,150);
 loadBalls(1);
 loadPaddle();
 
@@ -73,7 +73,7 @@ function startGame(){
 
 //play game screen
 function playGame(){
-  background(0);
+  background(200,200,200);
   textSize(20);
   fill(255);
   text("lives = " + lives,20,20);
@@ -85,7 +85,7 @@ function playGame(){
 }
 //end game scren
 function endGame(){
-  background(50,50,50);
+  background(200,50,50);
   //title
   textSize(50);
   fill(255);
